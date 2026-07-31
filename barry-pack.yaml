@@ -1,0 +1,8 @@
+manifestVersion: 1
+name: gifs
+description: GIF search and trending via Giphy
+
+tools:
+  entry: tools.ts
+  env:
+    - GIPHY_API_KEY
