@@ -1,4 +1,4 @@
-# Gifs (Barry Pack)
+# Gifs (Barry bag)
 
 GIF search and trending via Giphy.
 
