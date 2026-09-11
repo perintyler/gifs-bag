@@ -1,6 +1,23 @@
 name: gifs
 description: GIF search and trending via Giphy
 
+# These tools namespace as `media`, SHARED with the separate `media` bag — and
+# that is deliberate: a session granted `media` gets viewing (media bag) and GIF
+# search (this bag) as one surface, which is why they surface together as
+# mcp__media__view_image and mcp__media__search_gifs. Two bags contributing
+# tools to one namespace is legal — namespaces are a Set and tool filtering
+# matches per-tool — unlike two bags claiming the same `mcp-servers:` key.
+#
+# Declared because the namespace is NOT the bag name. Without this the manifest
+# yields nothing and the auto-traits bag-name fallback invents `gifs`: a grant
+# no tool carries, while the real `media` namespace goes ungranted by this bag.
+# Same failure `bags/sessions` had (27 tools on `session`, a hollow `sessions`
+# granted in DEFAULT_TRAITS).
+tool-metadata:
+  - { toolName: search_gifs, namespace: media, access: read }
+  - { toolName: trending_gifs, namespace: media, access: read }
+  - { toolName: random_gif, namespace: media, access: read }
+
 tools:
   entry: tools.ts
   env:
