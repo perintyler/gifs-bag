@@ -1,4 +1,4 @@
-import { defineTool, type ToolContext } from "@barry-rocks/tools";
+import { defineTool, type ToolContext } from "@barry-rocks/sdk-bags";
 import { z } from "zod";
 import { GiphyClient } from "./giphy.js";
 
